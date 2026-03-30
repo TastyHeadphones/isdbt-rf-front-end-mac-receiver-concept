@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant UI as Tauri UI
+  participant CLI as isdbtctl
+  participant HB as host-backend
+  participant BR as Bridge Controller
+  participant FW as Firmware BSP
+  participant TU as Tuner
+  participant DM as Demodulator
+
+  UI->>HB: Request device status
+  CLI->>HB: Tune command frequency and bandwidth
+  HB->>BR: Open control channel
+  BR->>FW: Dispatch tune command
+  FW->>TU: Program RF frequency
+  FW->>DM: Configure demodulation profile
+  DM-->>FW: Lock metrics and BER
+  FW-->>BR: Status update
+  BR-->>HB: Telemetry frame
+  HB-->>UI: Signal metrics and lock state

@@ -1,0 +1,14 @@
+flowchart LR
+  A["75 ohm Coax Input"] --> B["ESD and Surge Protection"]
+  B --> C["RF Band Select and Matching Network"]
+  C --> D["Tuner Front-End Module"]
+  D --> E["ISDB-T Demodulator Module"]
+  E --> F["Bridge Controller MCU/FPGA"]
+  F --> G["USB 3.0 Device Interface"]
+  G --> H["macOS Host"]
+  I["Clock Source 16-30.4 MHz"] --> D
+  I --> E
+  J["Power Tree"] --> D
+  J --> E
+  J --> F
+  K["Debug Header (SWD/UART/I2C)"] --> F

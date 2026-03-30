@@ -1,0 +1,9 @@
+flowchart LR
+  A["Coax RF Input"] --> B["RF Protection and Matching"]
+  B --> C["Tuner Eval Module or Custom Front-End"]
+  C --> D["ISDB-T Demodulator Eval Module"]
+  D --> E["Bridge Controller Firmware"]
+  E --> F["USB/Ethernet Host Link"]
+  F --> G["host-backend"]
+  G --> H["UI/CLI"]
+  X["Licensed Conditional Access Components (External)"] -. "Compliant ecosystem integration only" .-> G

@@ -1,0 +1,15 @@
+[package]
+name = "host-backend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+clap.workspace = true
+isdbt-shared = { path = "../shared" }
+serde.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

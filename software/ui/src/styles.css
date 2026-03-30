@@ -1,0 +1,77 @@
+:root {
+  --bg-top: #f6f8ff;
+  --bg-bottom: #e7eefc;
+  --panel: rgba(255, 255, 255, 0.9);
+  --text: #12263a;
+  --subtle: #2f4f6f;
+  --accent: #11698e;
+  --border: rgba(17, 105, 142, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.layout {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #d4e6ff, #cceaf7);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: var(--subtle);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .layout {
+    padding: 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.25rem;
+  }
+}

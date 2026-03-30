@@ -1,0 +1,14 @@
+mode = "lab_demo"
+
+[http]
+bind = "127.0.0.1"
+port = 8088
+
+[lab]
+simulate_devices = true
+autostart_replay = false
+default_replay_file = "../tests/data/synthetic_demo.ts"
+
+[logging]
+level = "info"
+format = "json"

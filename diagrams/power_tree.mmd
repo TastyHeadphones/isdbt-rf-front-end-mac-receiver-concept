@@ -1,0 +1,12 @@
+flowchart TD
+  VIN["USB-C 5V Input / Bench 5V"] --> PROT["Input Protection + Fuse"]
+  PROT --> SW1["Buck 3.3V Digital"]
+  PROT --> SW2["LDO 3.3V RF Quiet"]
+  PROT --> SW3["Buck/LDO 1.8V Core"]
+  PROT --> SW4["Optional 1.2V Core"]
+  SW1 --> MCU["Bridge MCU/FPGA"]
+  SW1 --> IO["I/O Pullups and Control"]
+  SW2 --> TUNER["Tuner Analog Rails"]
+  SW2 --> DEMODA["Demodulator Analog Rails"]
+  SW3 --> DEMODD["Demodulator Digital Rails"]
+  SW4 --> CORE["High-Speed Core (if required)"]

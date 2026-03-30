@@ -1,0 +1,15 @@
+board = "isdbt_ref_rev_a"
+
+[power]
+rail_3v3_dig = true
+rail_3v3_rf = true
+rail_1v8_core = true
+rail_1v2_core = false
+
+[clock]
+reference_hz = 30400000
+
+[interfaces]
+tuner_bus = "i2c0"
+demod_bus = "i2c1"
+bridge = "usb3"

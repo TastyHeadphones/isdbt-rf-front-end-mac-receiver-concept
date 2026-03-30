@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts
+build/
+dist/
+out/
+artifacts/
+
+# C/C++ / CMake
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+compile_commands.json
+
+# Rust
+**/target/
+Cargo.lock
+
+# Node / UI
+**/node_modules/
+**/.vite/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Logs
+*.log
+
+# KiCad generated
+*.kicad_prl
+*.kicad_pro-bak
+*.kicad_pcb-bak
+*.tmp

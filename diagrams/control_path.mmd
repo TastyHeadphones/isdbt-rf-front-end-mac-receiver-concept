@@ -1,0 +1,12 @@
+flowchart TB
+  UI["Tauri UI"] --> API["host-backend Control API"]
+  CLI["isdbtctl CLI"] --> API
+  API --> CFG["Configuration Manager (TOML)"]
+  API --> DEV["Device Discovery Manager"]
+  API --> TUNE["Tune Controller"]
+  DEV --> BRIDGE["USB Bridge Session"]
+  TUNE --> BRIDGE
+  BRIDGE --> FW["Firmware Control Layer"]
+  FW --> TUNER["Tuner Control (I2C/SPI)"]
+  FW --> DEMOD["Demodulator Control (I2C/SPI)"]
+  API --> LOGS["Structured Logs and Telemetry"]

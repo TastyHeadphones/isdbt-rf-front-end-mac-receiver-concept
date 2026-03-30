@@ -1,0 +1,9 @@
+flowchart LR
+  A["Synthetic TS Generator"] --> D["host-backend"]
+  B["Legal Prerecorded TS"] --> D
+  C["Optional USB Eval Module"] --> D
+  D --> E["Metrics and Diagnostics"]
+  D --> F["Capture File"]
+  G["isdbtctl"] --> D
+  H["Tauri UI"] --> D
+  I["Automated Tests"] --> D

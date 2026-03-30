@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISDB-T Receiver Reference Platform</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="hero">
+        <h1>ISDB-T Receiver Reference Platform</h1>
+        <p>Diagnostics and Lab Demo Monitoring Console</p>
+      </header>
+
+      <section class="card" id="health-card">
+        <h2>Diagnostics</h2>
+        <pre id="health">Loading...</pre>
+      </section>
+
+      <section class="card" id="devices-card">
+        <h2>Devices</h2>
+        <pre id="devices">Loading...</pre>
+      </section>
+
+      <section class="card" id="metrics-card">
+        <h2>Signal Metrics</h2>
+        <pre id="metrics">Loading...</pre>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

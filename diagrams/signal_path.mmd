@@ -1,0 +1,21 @@
+flowchart LR
+  subgraph RF["RF Capture Path"]
+    A["Coax RF In"] --> B["Protection and Matching"]
+    B --> C["Tuner"]
+    C --> D["Demodulator"]
+  end
+
+  subgraph Host["Host Transport Path"]
+    D --> E["Transport Stream Framing"]
+    E --> F["Bridge over USB"]
+    F --> G["host-backend Intake"]
+    G --> H["Capture/Replay Store"]
+    G --> I["Metrics and Diagnostics"]
+    G --> J["Optional Player/Inspector"]
+  end
+
+  subgraph Test["Test Injection"]
+    K["Synthetic TS Generator"] --> G
+    L["Legal Prerecorded TS"] --> G
+    M["SDR/Dev Board Test RF"] --> B
+  end
