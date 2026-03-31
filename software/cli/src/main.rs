@@ -88,7 +88,10 @@ async fn main() -> Result<()> {
 
 async fn print_json(response: reqwest::Response) -> Result<()> {
     let status = response.status();
-    let body = response.text().await.context("failed to read response body")?;
+    let body = response
+        .text()
+        .await
+        .context("failed to read response body")?;
 
     if let Ok(value) = serde_json::from_str::<serde_json::Value>(&body) {
         println!("{}", serde_json::to_string_pretty(&value)?);

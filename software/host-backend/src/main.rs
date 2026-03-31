@@ -66,12 +66,15 @@ async fn main() -> Result<()> {
 
     info!(bind_addr = %bind_addr, mode = %mode_label(&config.mode), "host-backend started");
 
-    axum::serve(listener, app).await.context("serving HTTP API")?;
+    axum::serve(listener, app)
+        .await
+        .context("serving HTTP API")?;
     Ok(())
 }
 
 fn init_logging(logging: &LoggingConfig) {
-    let filter = EnvFilter::try_new(logging.level.clone()).unwrap_or_else(|_| EnvFilter::new("info"));
+    let filter =
+        EnvFilter::try_new(logging.level.clone()).unwrap_or_else(|_| EnvFilter::new("info"));
 
     if logging.format.eq_ignore_ascii_case("json") {
         tracing_subscriber::fmt()
@@ -99,7 +102,9 @@ async fn health(State(state): State<AppState>) -> Json<HealthResponse> {
     })
 }
 
-async fn list_devices(State(state): State<AppState>) -> Json<Vec<isdbt_shared::protocol::DeviceSummary>> {
+async fn list_devices(
+    State(state): State<AppState>,
+) -> Json<Vec<isdbt_shared::protocol::DeviceSummary>> {
     Json(state.list_devices().await)
 }
 
@@ -129,7 +134,11 @@ async fn replay(
     })?;
 
     state
-        .record_replay(req.file.clone(), stats.packets_ingested, stats.bytes_ingested)
+        .record_replay(
+            req.file.clone(),
+            stats.packets_ingested,
+            stats.bytes_ingested,
+        )
         .await;
 
     Ok(Json(ReplayResponse {

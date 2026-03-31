@@ -37,7 +37,10 @@ impl AppState {
                 snr_db: 0.0,
                 ber: 1.0,
             });
-            info!(device_count = devices.len(), "initialized simulated devices");
+            info!(
+                device_count = devices.len(),
+                "initialized simulated devices"
+            );
         }
     }
 
